@@ -1,0 +1,251 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
+html, body {
+  border: 0;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+div, span, object, iframe, img, table, caption, thead, tbody,
+tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu,
+nav, footer, header, section, summary, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+ol, ul, li, fieldset, legend, label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+  display: block;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  caption, th, td {
+    text-align: left;
+    vertical-align: middle;
+  }
+}
+
+a img {
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+///
+
+@col_primary: #0099CC;
+
+@col_foreground: #ccc;
+@col_important: #fff; 
+@col_background: #000;
+
+@width_max: 720px;
+
+@large_responsive:   ~"only screen and (max-width: 1280px)"; // smaller than contain.large
+@desktop:   ~"only screen and (min-width: 1024px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 1023px)";
+@phone:   ~"only screen and (max-width: 719px)";
+
+
+
+///
+
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: @col_background;
+  color: @col_foreground;
+}
+
+a {
+  color: @col_primary;
+  text-decoration: none;
+  font-weight: 700;
+  &:visited {
+    color: darken(@col_primary, 15%);
+  }
+  &:hover, &:focus {
+    color: lighten(@col_primary, 20%);
+    text-decoration: underline;
+  }
+}
+
+b, strong, .bold {
+  font-weight: 700;
+}
+sup {
+  vertical-align: super;
+  font-size: 12px;
+}
+
+
+// 
+
+.contain {
+  max-width: @width_max;
+  margin: auto;
+}
+
+.ui.title {
+  &.huge {
+    font-size: 2.5em;
+    font-weight: 800;
+  }
+  &.large {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  &.medium {
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  &.small {
+    font-size: 1em;
+    font-size: 600;
+  }
+}
+
+.ui.menu {
+  display: block;
+  font-size: 0;
+  li {display: inline-block;}
+  .item {
+    display: inline-block;
+    padding: 15px 10px;
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    &:hover, &:active {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+//
+
+.ui.header {
+  border-bottom: 1px solid fade(@col_primary, 50%);
+  box-shadow: 0px 5px 4px 0px fade(@col_primary, 20%);
+  .contain {  
+    overflow: hidden;
+    clear: both;
+  }
+  .left {
+    float: left;
+    .logo {
+      display: inline-block;
+      padding: 10px;
+      color: @col_important;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 800;
+    }
+  }
+  .right {
+    float: right;
+  }
+}
+
+.ui.section {
+  text-align: center;
+  position: relative;
+  padding-top: 100px;
+  .large {
+    color: @col_primary;
+  }
+  .huge {
+    margin-top: 15px;
+    color: @col_important;
+    line-height: 1;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .lead {
+    margin-top: 20px;
+  }
+  .center {
+    img {
+      max-width: 40%;
+    }
+  }
+  .left, .right {
+    position: absolute;
+    .ui.block {
+      margin-bottom: 300px;
+    }
+  }
+  .right {
+    top: 350px;
+    margin-left: 500px;
+    .ui.block:first-child {
+      margin-left: -50px;
+    }
+  }
+}
+
+.ui.block {
+  max-width: 300px;
+  text-align: left;
+  &.small {
+    max-width: 250px;
+  }
+  .medium {
+    color: @col_primary;
+  }
+  .small {
+    font-weight: 400;
+  }
+}
+
+// 
+
+.ui.features {
+  padding-top: 100px;
+  .left {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    margin-left: -100px;
+    margin-right: 100px;
+  }
+  .right {
+    width: 50%;
+    display: inline-block;
+    float: left;
+  }
+  .feature {
+    margin-bottom: 1em;
+    font-weight: 400;
+    color: @col_primary;
+    font-size: 14px;
+    .description {
+      color: @col_foreground;
+      font-size: 14px;
+    }
+  }
+}

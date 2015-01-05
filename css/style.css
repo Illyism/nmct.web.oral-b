@@ -1,0 +1,282 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+html,
+body {
+  border: 0;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: #000000;
+  color: #cccccc;
+}
+a {
+  color: #0099cc;
+  text-decoration: none;
+  font-weight: 700;
+}
+a:visited {
+  color: #006080;
+}
+a:hover,
+a:focus {
+  color: #33ccff;
+  text-decoration: underline;
+}
+b,
+strong,
+.bold {
+  font-weight: 700;
+}
+sup {
+  vertical-align: super;
+  font-size: 12px;
+}
+.contain {
+  max-width: 720px;
+  margin: auto;
+}
+.ui.title.huge {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+.ui.title.large {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.ui.title.medium {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.ui.title.small {
+  font-size: 1em;
+  font-size: 600;
+}
+.ui.menu {
+  display: block;
+  font-size: 0;
+}
+.ui.menu li {
+  display: inline-block;
+}
+.ui.menu .item {
+  display: inline-block;
+  padding: 15px 10px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.ui.menu .item:hover,
+.ui.menu .item:active {
+  color: #ffffff;
+}
+.ui.header {
+  border-bottom: 1px solid rgba(0, 153, 204, 0.5);
+  box-shadow: 0px 5px 4px 0px rgba(0, 153, 204, 0.2);
+}
+.ui.header .contain {
+  overflow: hidden;
+  clear: both;
+}
+.ui.header .left {
+  float: left;
+}
+.ui.header .left .logo {
+  display: inline-block;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+}
+.ui.header .right {
+  float: right;
+}
+.ui.section {
+  text-align: center;
+  position: relative;
+  padding-top: 100px;
+}
+.ui.section .large {
+  color: #0099cc;
+}
+.ui.section .huge {
+  margin-top: 15px;
+  color: #ffffff;
+  line-height: 1;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.ui.section .lead {
+  margin-top: 20px;
+}
+.ui.section .center img {
+  max-width: 40%;
+}
+.ui.section .left,
+.ui.section .right {
+  position: absolute;
+}
+.ui.section .left .ui.block,
+.ui.section .right .ui.block {
+  margin-bottom: 300px;
+}
+.ui.section .right {
+  top: 350px;
+  margin-left: 500px;
+}
+.ui.section .right .ui.block:first-child {
+  margin-left: -50px;
+}
+.ui.block {
+  max-width: 300px;
+  text-align: left;
+}
+.ui.block.small {
+  max-width: 250px;
+}
+.ui.block .medium {
+  color: #0099cc;
+}
+.ui.block .small {
+  font-weight: 400;
+}
+.ui.features {
+  padding-top: 100px;
+}
+.ui.features .left {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  margin-left: -100px;
+  margin-right: 100px;
+}
+.ui.features .right {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+.ui.features .feature {
+  margin-bottom: 1em;
+  font-weight: 400;
+  color: #0099cc;
+  font-size: 14px;
+}
+.ui.features .feature .description {
+  color: #cccccc;
+  font-size: 14px;
+}
