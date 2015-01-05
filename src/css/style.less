@@ -226,26 +226,55 @@ sup {
 
 .ui.features {
   padding-top: 100px;
+  overflow: hidden;
+  clear: both;
+  img.crop {max-width: 100%;}
   .left {
     width: 50%;
     display: inline-block;
     float: left;
-    margin-left: -100px;
-    margin-right: 100px;
+    &.move {
+      margin-left: -100px;
+      margin-right: 100px;
+      &.more {
+        margin-left: -150px;
+        margin-right: 150px;
+      }
+    }
   }
   .right {
     width: 50%;
     display: inline-block;
     float: left;
+    &.move {
+      margin-left: 100px;
+      margin-right: -100px;
+      &.more {
+        margin-left: 150px;
+        margin-right: -150px;
+      }
+    }
+  }
+  .top {
+    margin-top: 100px;
   }
   .feature {
     margin-bottom: 1em;
-    font-weight: 400;
     color: @col_primary;
     font-size: 14px;
+    font-weight: 700;
+    &.single {
+      color: @col_foreground;
+    }
     .description {
+      margin-left: 1em;
       color: @col_foreground;
       font-size: 14px;
+      font-weight: 400;
     }
+  }
+  .ui.list {
+    padding-left: 1em;
+    font-size: 14px;
   }
 }

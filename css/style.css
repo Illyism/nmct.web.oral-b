@@ -257,26 +257,57 @@ sup {
 }
 .ui.features {
   padding-top: 100px;
+  overflow: hidden;
+  clear: both;
+}
+.ui.features img.crop {
+  max-width: 100%;
 }
 .ui.features .left {
   width: 50%;
   display: inline-block;
   float: left;
+}
+.ui.features .left.move {
   margin-left: -100px;
   margin-right: 100px;
+}
+.ui.features .left.move.more {
+  margin-left: -150px;
+  margin-right: 150px;
 }
 .ui.features .right {
   width: 50%;
   display: inline-block;
   float: left;
 }
+.ui.features .right.move {
+  margin-left: 100px;
+  margin-right: -100px;
+}
+.ui.features .right.move.more {
+  margin-left: 150px;
+  margin-right: -150px;
+}
+.ui.features .top {
+  margin-top: 100px;
+}
 .ui.features .feature {
   margin-bottom: 1em;
-  font-weight: 400;
   color: #0099cc;
   font-size: 14px;
+  font-weight: 700;
+}
+.ui.features .feature.single {
+  color: #cccccc;
 }
 .ui.features .feature .description {
+  margin-left: 1em;
   color: #cccccc;
+  font-size: 14px;
+  font-weight: 400;
+}
+.ui.features .ui.list {
+  padding-left: 1em;
   font-size: 14px;
 }
