@@ -56,6 +56,10 @@
     outline: 0;
   }
 
+  .templates {
+    display: none;
+  }
+
 
 //  _    __               
 // | |  / /___ ___________
@@ -71,7 +75,6 @@
 
   @width_max: 720px;
 
-  @large_responsive:   ~"only screen and (max-width: 1280px)"; // smaller than contain.large
   @desktop:   ~"only screen and (min-width: 1024px)";
   @tablet:    ~"only screen and (min-width: 720px) and (max-width: 1023px)";
   @phone:   ~"only screen and (max-width: 719px)";
@@ -128,6 +131,14 @@
   .contain {
     max-width: @width_max;
     margin: auto;
+    @media @tablet {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @media @phone {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   .ui.title {
@@ -222,6 +233,16 @@
         color: lighten(@col_primary, 10%);
       }
     }
+    @media @phone {
+      .left, .right {
+        float: none;
+        width: 100%;
+        text-align: center;
+      }
+      &.under {
+        .left {display:  none;}
+      }
+    }
   }
 
 
@@ -263,8 +284,41 @@
     .right {
       top: 350px;
       margin-left: 500px;
-      .ui.block:first-child {
+      .ui.block.first {
         margin-left: -50px;
+      }
+    }
+    @media @tablet, @phone {
+      .center {
+        text-align: left;
+      }
+      .left, .right {
+        right: 0px;
+        left: auto;
+        max-width: 60%;
+        margin-left: 0px;
+        .ui.block, .ui.block.small, .ui.block.first {
+          margin-bottom: 1em;
+          max-width: 100%;
+          margin-left: 0px;
+        }
+      }
+      .left {
+        top: 200px;
+      }
+      .right {
+        top: 750px;
+      }
+    }
+    @media @phone {
+      .left {
+        top: 100px;
+      }
+      .right {
+        top: 620px;
+      }
+      .ui.title.small {
+        font-size: .9em;
       }
     }
   }
@@ -289,8 +343,12 @@
 //   / /_/ / _ \/ ___/ __ \
 //  / __  /  __/ /  / /_/ /
 // /_/ /_/\___/_/   \____/ 
-                        
+   
+.ui.hero .background {
+  display: none;
+}
 
+@media @desktop {
   .ui.hero {
     width: 100%;
     top: 0px;
@@ -300,6 +358,7 @@
     position: absolute;
     z-index: 10;
     .background {
+      display: block;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -326,7 +385,8 @@
     margin: auto;
     width: 100%;
   }
-
+}
+ 
 
 //     ______           __                      
 //    / ____/__  ____ _/ /___  __________  _____
@@ -386,6 +446,17 @@
     .ui.list {
       padding-left: 1em;
       font-size: 14px;
+    }
+    @media @phone {
+      .left, .right {
+        display: block;
+        width: 100%;
+        float: none;
+        &.move, &.move.more {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+      }
     }
   }
 
