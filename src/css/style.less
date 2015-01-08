@@ -78,6 +78,7 @@
   @desktop:   ~"only screen and (min-width: 1024px)";
   @tablet:    ~"only screen and (min-width: 720px) and (max-width: 1023px)";
   @phone:   ~"only screen and (max-width: 719px)";
+  @tiny:   ~"only screen and (max-width: 419px)";
 
 
 //     ____             _          
@@ -243,6 +244,12 @@
         .left {display:  none;}
       }
     }
+    @media @tiny {
+      .ui.menu .item {
+        padding: 15px 5px;
+        font-size: 12px;
+      }
+    }
   }
 
 
@@ -311,15 +318,22 @@
       }
     }
     @media @phone {
-      .left {
+      .center {
+        position: absolute;
         top: 100px;
+        img {
+          max-width: 150px;
+        }
       }
-      .right {
-        top: 620px;
+      .left, .right {
+        position: static;
+        max-width: 100%;
+        margin-left: 150px;
       }
-      .ui.title.small {
-        font-size: .9em;
-      }
+    }
+    @media @tiny {
+      .center img { max-width: 100px; }
+      .left, .right { margin-left: 100px; }
     }
   }
 
