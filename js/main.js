@@ -1,5 +1,5 @@
 (function() {
-  var $, FN, MutationObserver, Review, Util, WeakMap, default_escape_fn, getComputedStyle, getComputedStyleRX, onPlayerReady, player, render_escape, template_escape, timeSince,
+  var $, FN, MutationObserver, Review, Util, WeakMap, default_escape_fn, getComputedStyle, getComputedStyleRX, onPlayerReady, onPlayerStateChange, player, render_escape, template_escape, timeSince,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
@@ -620,15 +620,23 @@
   window.onYouTubeIframeAPIReady = function() {
     return player = new YT.Player('ytplayer', {
       events: {
-        'onReady': onPlayerReady
+        "onReady": onPlayerReady,
+        "onStateChange": onPlayerStateChange
       }
     });
   };
 
   onPlayerReady = function() {
     player.playVideo();
+    player.setPlaybackQuality("highres");
     player.setPlaybackRate(2);
     return player.mute();
+  };
+
+  onPlayerStateChange = function() {
+    if ((player != null) && player.getPlayerState() === 5) {
+      return player.playVideo();
+    }
   };
 
 }).call(this);

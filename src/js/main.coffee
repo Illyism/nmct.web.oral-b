@@ -106,9 +106,14 @@ player = null
 window.onYouTubeIframeAPIReady = () ->
   player = new YT.Player 'ytplayer',
     events:
-      'onReady': onPlayerReady
+      "onReady": onPlayerReady
+      "onStateChange": onPlayerStateChange
 
 onPlayerReady = () ->
   player.playVideo()
+  player.setPlaybackQuality "highres"
   player.setPlaybackRate 2
   player.mute()
+
+onPlayerStateChange = () ->
+  player.playVideo() if player? and player.getPlayerState() is 5

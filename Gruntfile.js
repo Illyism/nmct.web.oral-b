@@ -76,15 +76,15 @@ module.exports = function(grunt) {
     watch: {
       jade: {
         files: ['src/html/*.jade'],
-        tasks: ['jade'],
+        tasks: ['jade:compile'],
       },
       less: {
         files: ['src/css/*.less'],
-        tasks: ['less'],
+        tasks: ['less:compile'],
       },
       coffee: {
         files: ['src/js/*.coffee'],
-        tasks: ['coffee'],
+        tasks: ['coffee:compile'],
       },
       livereload: {
         options: { livereload: true },

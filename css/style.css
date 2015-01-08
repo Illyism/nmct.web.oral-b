@@ -198,7 +198,7 @@ sup {
   z-index: 5;
   box-shadow: none;
 }
-.ui.header.under .left .logo {
+.ui.header.under .left .product {
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -213,13 +213,17 @@ sup {
 .ui.header .left {
   float: left;
 }
-.ui.header .left .logo {
+.ui.header .left .product {
   display: inline-block;
-  padding: 10px;
+  padding: 13px 10px;
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 600;
+}
+.ui.header .left .logo {
+  position: relative;
+  top: 3px;
 }
 .ui.header .right {
   float: right;
