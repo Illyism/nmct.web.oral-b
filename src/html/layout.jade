@@ -6,7 +6,7 @@ html
     meta(http-equiv="content-type", content="text/html; charset=UTF-8")
     meta(name="description", content=description)
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
-    link(rel="stylesheet", href="css/style.css", type="text/css")
+    link(rel="stylesheet", href=style, type="text/css")
   body
     include header
     a(name="overview")
@@ -21,6 +21,6 @@ html
     .ui.container
       block content
     script(src="http://www.youtube.com/iframe_api")
-    script(src="js/main.js")
+    script(src=script)
     .templates
       include templates

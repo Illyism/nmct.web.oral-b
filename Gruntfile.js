@@ -3,7 +3,23 @@ module.exports = function(grunt) {
     jade: {
       compile: {
         options: {
-          pretty: true
+          pretty: true,
+          data: {
+            "script": "js/main.js",
+            "style": "css/style.css"
+          }
+        },
+        files: {
+          "index.html": ["src/html/index.jade"]
+        }
+      },
+      build: {
+        options: {
+          pretty: false,
+          data: {
+            "script": "js/main.min.js",
+            "style": "css/style.min.css"
+          }
         },
         files: {
           "index.html": ["src/html/index.jade"]
@@ -19,15 +35,42 @@ module.exports = function(grunt) {
         files: {
           "js/main.js": ["src/js/wow.coffee", "src/js/main.coffee"]
         }
+      },
+      build: {
+        options: {
+          join: true,
+          expand: false
+        },
+        files: {
+          "js/main.js": ["src/js/wow.coffee", "src/js/main.coffee"]
+        }
       }
     },
     less: {
-      main: {
+      compile: {
         options: {
           cleancss: true
         },
         src: ['src/css/style.less'],
         dest: 'css/style.css'
+      },
+      build: {
+        options: {
+          cleancss: true,
+          compress: true
+        },
+        src: ['src/css/style.less'],
+        dest: 'css/style.min.css'
+      }
+    },
+    uglify: {
+      options: {
+        mangle: false
+      },
+      build: {
+        files: {
+          'js/main.min.js': ['js/main.js']
+        }
       }
     },
     watch: {
@@ -55,5 +98,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-coffee");
   grunt.loadNpmTasks("grunt-contrib-uglify");
-  grunt.registerTask('default', ['jade', 'less', "coffee", 'watch']);
+
+  grunt.registerTask('default', ['jade:compile', 'less:compile', "coffee:compile", 'watch']);
+  grunt.registerTask('build', ['less:compile', 'jade:build', 'less:build', "coffee:build", 'uglify:build']);
 };
