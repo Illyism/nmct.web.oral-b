@@ -99,3 +99,16 @@ $.render = (tmpl, data, escape_fn) ->
       template_escape[char];
     ).replace(/{\s*([\w\.]+)\s*}/g, "' + (e?e(_.$1,'$1'):_.$1||(_.$1==null?'':_.$1)) + '") + "'")
   )(data, escape_fn)
+
+
+player = null
+
+window.onYouTubeIframeAPIReady = () ->
+  player = new YT.Player 'ytplayer',
+    events:
+      'onReady': onPlayerReady
+
+onPlayerReady = () ->
+  player.playVideo()
+  player.setPlaybackRate 2
+  player.mute()

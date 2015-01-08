@@ -5,30 +5,14 @@ html
     title!=title
     meta(http-equiv="content-type", content="text/html; charset=UTF-8")
     meta(name="description", content=description)
-    meta(name="keywords", content=keywords)
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
     link(rel="stylesheet", href="css/style.css", type="text/css")
   body
-    .ui.header
-      .contain
-        .left
-          .logo Oral-B<sup>®</sup> Black 7000
-        .right.ui.menu
-          a.item(href="#overview") Overview
-          a.item(href="#features") Features
-          a.item(href="#reviews") Reviews
-          a.item.cta(href="http://il.ly") Purchase Now
-    .ui.header.under
-      .contain
-        .left
-          .logo Oral-B<sup>®</sup> Black 7000
-        .right.ui.menu
-          a.item(href="#overview") Overview
-          a.item(href="#features") Features
-          a.item(href="#reviews") Reviews
-          a.item.cta(href="http://il.ly") Purchase Now
+    include header
     a(name="overview")
     .ui.section.hero
+      .background
+        iframe#ytplayer(frameborder="0" height="100%" width="100%" src="http://www.youtube.com/embed/2cWNwanoyWw?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&modestbranding=1&rel=0&theme=dark&enablejsapi=1&iv_load_policy=3")
       .content
         .contain
           h1.ui.title.large Oral-B<sup>®</sup> Black 7000
@@ -36,7 +20,7 @@ html
           p.lead It’s what happens when German engineers have a zero tolerance for plaque. It accelerates to top speed faster than a high performance sports car. Seven independent functions. Up to 800 brush movements per second.
     .ui.container
       block content
-    script(src="http://localhost:35729/livereload.js")
+    script(src="http://www.youtube.com/iframe_api")
     script(src="js/main.js")
     .templates
       include templates

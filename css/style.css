@@ -286,7 +286,13 @@ sup {
   height: 100%;
   position: absolute;
   z-index: 10;
-  background: url(http://www.freestockphotos.name/wallpaper-original/wallpapers/female-dentist-attends-to-his-patient-34.jpg);
+}
+.ui.hero .background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
 }
 .ui.hero .content {
   top: 0px;
@@ -295,7 +301,7 @@ sup {
   height: 100%;
   position: absolute;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.5);
 }
 .ui.hero .content .contain {
   padding: 250px 0;
