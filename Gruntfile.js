@@ -10,8 +10,19 @@ module.exports = function(grunt) {
         }
       }
     },
+    coffee: {
+      compile: {
+        options: {
+          join: true,
+          expand: true
+        },
+        files: {
+          "js/main.js": ["src/js/wow.coffee", "src/js/main.coffee"]
+        }
+      }
+    },
     less: {
-      dev: {
+      main: {
         options: {
           cleancss: true
         },
@@ -28,6 +39,10 @@ module.exports = function(grunt) {
         files: ['src/css/*.less'],
         tasks: ['less'],
       },
+      coffee: {
+        files: ['src/js/*.coffee'],
+        tasks: ['coffee'],
+      },
       livereload: {
         options: { livereload: true },
         files: ['css/*.css', "js/*.js", "index.html"],
@@ -38,5 +53,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jade");
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.registerTask('default', ['jade', 'less', 'watch']);
+  grunt.loadNpmTasks("grunt-contrib-coffee");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.registerTask('default', ['jade', 'less', "coffee", 'watch']);
 };

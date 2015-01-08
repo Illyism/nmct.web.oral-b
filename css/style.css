@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+@import "animate.css";
 html,
 body {
   border: 0;
@@ -185,8 +186,25 @@ sup {
   color: #ffffff;
 }
 .ui.header {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid rgba(0, 153, 204, 0.5);
-  box-shadow: 0px 5px 4px 0px rgba(0, 153, 204, 0.2);
+  box-shadow: 0px 5px 4px 0px rgba(204, 204, 204, 0.1);
+}
+.ui.header.under {
+  position: fixed;
+  z-index: 5;
+  box-shadow: none;
+}
+.ui.header.under .left .logo {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.ui.header.under .ui.menu .item {
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 .ui.header .contain {
   overflow: hidden;
@@ -205,6 +223,12 @@ sup {
 }
 .ui.header .right {
   float: right;
+}
+.ui.header .cta {
+  color: #0099cc;
+}
+.ui.header .cta:hover {
+  color: #00bfff;
 }
 .ui.section {
   text-align: center;
@@ -254,6 +278,33 @@ sup {
 }
 .ui.block .small {
   font-weight: 400;
+}
+.ui.hero {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background: url(http://www.freestockphotos.name/wallpaper-original/wallpapers/female-dentist-attends-to-his-patient-34.jpg);
+}
+.ui.hero .content {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.9);
+}
+.ui.hero .content .contain {
+  padding: 250px 0;
+}
+.ui.container {
+  position: absolute;
+  top: 100%;
+  margin: auto;
+  width: 100%;
 }
 .ui.features {
   padding-top: 100px;
@@ -310,4 +361,31 @@ sup {
 .ui.features .ui.list {
   padding-left: 1em;
   font-size: 14px;
+}
+.ui.reviews {
+  text-align: left;
+}
+.ui.reviews .ui.review {
+  padding-bottom: 1em;
+  border-bottom: 1px dotted rgba(204, 204, 204, 0.2);
+  margin-bottom: 1em;
+}
+.ui.reviews .ui.review .ui.title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+}
+.ui.reviews .ui.review .meta {
+  color: #666666;
+  font-weight: 600;
+  font-size: 12px;
+}
+.ui.reviews .ui.review .meta .time {
+  float: right;
+}
+.ui.reviews .ui.review .comment {
+  margin: .5em auto;
+}
+.ui.reviews .ui.review:last-child {
+  border-bottom: none;
 }
